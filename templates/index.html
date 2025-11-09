@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>StudyPath — Personalized Learning Planner</title>
+  <link rel="stylesheet" href="/static/styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>StudyPath</h1>
+      <p class="subtitle">Personalized study plan · Progress tracking · Built for students</p>
+    </header>
+
+    <section class="card">
+      <h2>1) Create or Update Your Plan</h2>
+      <div class="grid">
+        <div>
+          <label>Subjects (comma‑separated)</label>
+          <input id="subjects" placeholder="e.g., Math, Physics, English"/>
+        </div>
+        <div>
+          <label>Weak Areas (comma‑separated)</label>
+          <input id="weaknesses" placeholder="e.g., Math, English"/>
+        </div>
+        <div>
+          <label>Exam Date</label>
+          <input type="date" id="exam_date"/>
+        </div>
+        <div>
+          <label>Hours per day</label>
+          <input type="number" id="hours" value="2" min="1" step="0.5"/>
+        </div>
+      </div>
+      <div class="row">
+        <button id="btn-generate">Generate / Update Plan</button>
+        <button id="btn-reset" class="ghost">Reset All</button>
+      </div>
+      <p id="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>2) Today & Upcoming Tasks</h2>
+      <div id="plan"></div>
+    </section>
+
+    <section class="card">
+      <h2>3) Progress</h2>
+      <div class="charts">
+        <canvas id="overallChart" height="120"></canvas>
+      </div>
+    </section>
+
+    <footer>
+      <small>Runs locally · No cloud · Built with ♥</small>
+    </footer>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
